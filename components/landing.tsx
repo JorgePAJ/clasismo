@@ -503,7 +503,7 @@ export default function Landing() {
                       <p className="mt-6 text-2xl font-medium text-white">
                         Sexism and racism and homophobia and classism are so
                         naturalized. All these stereotypes make people think
-                        it's just normal that straight white men are getting all
+                        its just normal that straight white men are getting all
                         the breaks.
                       </p>
                     </div>
