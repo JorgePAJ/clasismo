@@ -64,7 +64,7 @@ const features = [
 
 export default function Whatis() {
   return (
-    <div className="bg-gray-50 overflow-hidden h-screen">
+    <div className="bg-gray-50 overflow-hidden md:h-screen">
       <Navbar />
       <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <svg
