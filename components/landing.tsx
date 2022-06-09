@@ -40,6 +40,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
+import Navbar from "./navbar";
 
 const navigation = [
   { name: "Que es", href: "#" },
@@ -240,40 +241,7 @@ export default function Landing() {
       <div className="relative overflow-hidden">
         <Popover as="header" className="relative">
           <div className="bg-gray-900 pt-6">
-            <nav
-              className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
-              aria-label="Global"
-            >
-              <div className="flex items-center flex-1">
-                <div className="flex items-center justify-between w-full md:w-auto">
-                  <a href="#">
-                    <span className="sr-only">Workflow</span>
-                    <img
-                      className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
-                      alt=""
-                    />
-                  </a>
-                  <div className="-mr-2 flex items-center md:hidden">
-                    <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
-                      <span className="sr-only">Open main menu</span>
-                      <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
-                  </div>
-                </div>
-                <div className="hidden space-x-8 md:flex md:ml-10">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-base font-medium text-white hover:text-gray-300"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </nav>
+            <Navbar/>
           </div>
 
           <Transition
@@ -623,7 +591,7 @@ export default function Landing() {
                 <div className="mt-8">
                   <div className="inline-flex rounded-md shadow">
                     <a
-                      href="#"
+                      href="somos"
                       className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                     >
                       Contactanos
