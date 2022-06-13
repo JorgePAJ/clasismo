@@ -17,6 +17,12 @@ const people = [
     imageUrl:
       "https://i.ibb.co/Rht8qwF/a0e4d479-b915-4441-9739-d3ec0d915166.jpg",
   },
+  {
+    name: "Juan Daniel Castanier",
+    role: "Bug Testing Lead",
+    imageUrl:
+      "https://i.ibb.co/3kchzzW/27787fb5-b2bb-4342-bdd1-6ca36a07ef91.jpg",
+  },
 ];
 
 export default function Who() {
