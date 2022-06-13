@@ -5,7 +5,18 @@ const people = [
     role: "Web Developer",
     imageUrl: "https://i.ibb.co/kH7FZvZ/instadp-jorge-plasencia-full-size.jpg",
   },
-  // More people...
+  {
+    name: "Oscar Orozco",
+    role: "Research Lead",
+    imageUrl:
+      "https://i.ibb.co/cF60Fw2/441b5c88-796b-4255-afe3-a24510d7a598.jpg",
+  },
+  {
+    name: "Luis Chamorro",
+    role: "Design Lead",
+    imageUrl:
+      "https://i.ibb.co/Rht8qwF/a0e4d479-b915-4441-9739-d3ec0d915166.jpg",
+  },
 ];
 
 export default function Who() {
@@ -29,7 +40,7 @@ export default function Who() {
               <li key={person.name}>
                 <div className="space-y-4">
                   <img
-                    className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
+                    className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24 object-cover"
                     src={person.imageUrl}
                     alt=""
                   />
