@@ -1,35 +1,8 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          teal: colors.teal,
-          cyan: colors.cyan,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
-    XCircleIcon,
-    ChatAlt2Icon,
+  XCircleIcon,
+  ChatAlt2Icon,
   BookOpenIcon,
   CogIcon,
   SpeakerphoneIcon,
@@ -51,14 +24,12 @@ const navigation = [
 const features = [
   {
     name: "No compartas",
-    description:
-      "No compartas memes, o informacion que promueva el clasismo",
+    description: "No compartas memes, o informacion que promueva el clasismo",
     icon: XCircleIcon,
   },
   {
     name: "Evita comentarios",
-    description:
-      "No hagas comentarios que promuevan el clasismo",
+    description: "No hagas comentarios que promuevan el clasismo",
     icon: ChatAlt2Icon,
   },
   {
@@ -94,8 +65,7 @@ const blogPosts = [
     date: " ",
     datetime: "",
     category: { name: "Article", href: "#" },
-    imageUrl:
-      "https://i.ibb.co/j6h1nbK/preview-Con.png",
+    imageUrl: "https://i.ibb.co/j6h1nbK/preview-Con.png",
     preview:
       "El Consejo Nacional para Prevenir La Discriminación, CONAPRED, es un órgano de Estado creado por la Ley Federal para Prevenir y Eliminar la Discriminación, aprobada el 29 de abril de 2003.",
     author: {
@@ -145,6 +115,7 @@ const blogPosts = [
     readingLength: "11 min",
   },
 ];
+
 const footerNavigation = {
   solutions: [
     { name: "Marketing", href: "#" },
@@ -236,12 +207,13 @@ const footerNavigation = {
 };
 
 export default function Landing() {
+  const [sub, setSub] = useState(false);
   return (
     <div className="bg-white">
       <div className="relative overflow-hidden">
         <Popover as="header" className="relative">
           <div className="bg-gray-900 pt-6">
-            <Navbar/>
+            <Navbar />
           </div>
 
           <Transition
@@ -344,11 +316,20 @@ export default function Landing() {
                             <button
                               type="submit"
                               className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                              onClick={() => {
+                                setSub(true);
+                              }}
                             >
                               Subscribirte
                             </button>
                           </div>
                         </div>
+                        {sub === true && (
+                          <h1 className="text-green-500 my-2">
+                            Te haz suscrito con exito a nuestro newsletter!
+                          </h1>
+                        )}
+
                         <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                           Nuestros correos son libres de spam y puedes dejar de
                           recibirlos cuando desees.
@@ -407,7 +388,8 @@ export default function Landing() {
                 Empieza con estas acciones
               </p>
               <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                Estas sencillas acciones te ayudaran a mantener el clasismo fuera de tu persona.
+                Estas sencillas acciones te ayudaran a mantener el clasismo
+                fuera de tu persona.
               </p>
               <div className="mt-12">
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -470,17 +452,17 @@ export default function Landing() {
                       </svg>
                       <p className="mt-6 text-2xl font-medium text-white">
                         Sexism and racism and homophobia and classism are so
-                        naturalized. All these stereotypes make people think
-                        its just normal that straight white men are getting all
-                        the breaks.
+                        naturalized. All these stereotypes make people think its
+                        just normal that straight white men are getting all the
+                        breaks.
                       </p>
                     </div>
                     <footer className="mt-6">
                       <p className="text-base font-medium text-white">
-                      Kathleen Hanna
+                        Kathleen Hanna
                       </p>
                       <p className="text-base font-medium text-cyan-100">
-                      Música, activista, y escritora estadounidense.
+                        Música, activista, y escritora estadounidense.
                       </p>
                     </footer>
                   </blockquote>
@@ -500,7 +482,8 @@ export default function Landing() {
                   Recursos utiles
                 </p>
                 <p className="mt-5 mx-auto max-w-prose text-xl text-gray-500">
-                  Utiliza libremente estos recursos que nosotros encontramos muy enriquecedores.
+                  Utiliza libremente estos recursos que nosotros encontramos muy
+                  enriquecedores.
                 </p>
               </div>
               <div className="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
@@ -554,7 +537,6 @@ export default function Landing() {
                               {post.author.name}
                             </a>
                           </p>
-                         
                         </div>
                       </div>
                     </div>
@@ -586,7 +568,9 @@ export default function Landing() {
                   Estamos felices de escucharte
                 </p>
                 <p className="mt-3 text-lg text-gray-300">
-                  Haznos saber que quieres saber más de este tipo de contenido, preguntanos lo que desees, envianos tus recomendaciones de contenido, o simplemente escribenos.
+                  Haznos saber que quieres saber más de este tipo de contenido,
+                  preguntanos lo que desees, envianos tus recomendaciones de
+                  contenido, o simplemente escribenos.
                 </p>
                 <div className="mt-8">
                   <div className="inline-flex rounded-md shadow">
